@@ -1,9 +1,8 @@
 class UserMailer < ApplicationMailer
-  default from: "daopt1995@gmail.com"
+  default from: ENV["GMAIL_USERNAME"]
 
   def welcome_email(user)
     @user = user
-    @url = "https://www.youtube.com/watch?v=fz8Ya9IS5eY&list=RD_x31sDLWQuU&index=5"
-    mail(to: "daopt22@gmail.com", subject: "Title: test send mail")
+    mail(to: "daopt22@gmail.com", subject: "Lương T5/2020")
   end
 end
