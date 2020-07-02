@@ -1,8 +1,9 @@
 class UserMailer < ApplicationMailer
   default from: ENV["GMAIL_USERNAME"]
 
-  def welcome_email(user)
+  def welcome_email(user, email)
+    headers['X-No-Spam'] = 'True'
     @user = user
-    mail(to: "daopt22@gmail.com", subject: "Lương T5/2020")
+    mail(to: email, subject: "Lương T6/2020")
   end
 end

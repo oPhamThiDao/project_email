@@ -2,6 +2,7 @@
 class UserMailerPreview < ActionMailer::Preview
   def welcome_email
     user = ENV["GMAIL_USERNAME"]
-    UserMailer.welcome_email(user)
+    email = "example01@example.com"
+    UserMailer.welcome_email(user, email)
   end
 end
