@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <style>
-      /* Email styles need to be inline */
+      table { width:100%; }
+
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      th, td , h2 {
+        padding: 15px;
+        text-align: center;
+      }
+
+      .footer {
+        margin-top: 45px;
+      }
+
+      p {
+        margin: 4px 0px;
+      }
     </style>
   </head>
-
   <body>
+    <h2>Lương Tháng <%= 1.month.ago.strftime("T%m/%Y") %></h2>
+    
     <%= yield %>
+
+    <div class="footer">
+      <p>------</p>
+      <p>Trần Thị Hoa.</p>
+      <p>DĐ: 0968833178 </p>
+    </div>
   </body>
 </html>
