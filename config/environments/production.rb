@@ -70,7 +70,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: ENV["HOST"] }
+  config.action_mailer.default_url_options = { host: ENV["DOMAIN"] }
 
   # host = 'localhost:3000' #replace with your own url
   # config.action_mailer.default_url_options = { host: host }
