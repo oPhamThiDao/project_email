@@ -1,1 +1,5 @@
-OK
+<%= form_tag recipients_path, method: :post, multipart: true do %>
+  <%= file_field_tag "file_csv" %>
+  <br>
+  <%= submit_tag "Submit" %>
+<% end %>

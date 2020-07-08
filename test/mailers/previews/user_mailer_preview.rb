@@ -1,8 +1,7 @@
 # Preview all emails at http://localhost:3000/rails/mailers/user_mailer
 class UserMailerPreview < ActionMailer::Preview
   def welcome_email
-    user = ENV["GMAIL_USERNAME"]
-    email = "example01@example.com"
-    UserMailer.welcome_email(user, email)
+    info = ["example@example.com", 11, "Phạm Thị Đào", "CS1", "Sale ONL", 29, 28, 8000, nil, nil, nil, nil, nil, nil, 8285.71]
+    UserMailer.welcome_email(info)
   end
 end
