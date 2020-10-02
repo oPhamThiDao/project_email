@@ -1,0 +1,139 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  position: relative;
+
+  #main-bg {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.8;
+    background-image: url("background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+
+    &.content {
+      padding-top: 80px;
+
+      label {
+        color: #f65f00;
+      }
+    }
+  }
+
+  .fixed-header, .fixed-footer {
+    width: 100%;
+    position: fixed;
+    background: #0d112899;
+    padding: 10px 0;
+    color: #fff;
+  }
+
+  .fixed-header {
+    top: 0;
+
+    a {
+      color: #fd5f00;
+      text-decoration: none;
+      padding: 2px 25px;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 15px;
+    }
+  }
+
+  .fixed-footer {
+    bottom: 0;
+  }
+
+  .form-import, .show-messages, .salary-list {
+    background: #0d112899;
+  }
+
+  .import-csv {
+    width: 40%;
+    float: left;
+
+    .form-import {
+      color: white;
+      padding: 30px 30px;
+
+      .file-salary::-webkit-file-upload-button {
+        color: white;
+        display: inline-block;
+        background: #f0ad4e;
+        border: none;
+        padding: 7px 10px;
+        font-weight: 700;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 10pt;
+      }
+    }
+
+    .show-messages {
+      padding: 25px 30px;
+      margin-top: 40px;
+      height: calc(100vh - 500px);
+      overflow: auto;
+
+      .message-alert {
+        color: red;
+      }
+
+      .message-notice {
+        color: #e3890b;
+      }
+    }
+  }
+
+  .salary-list {
+    width: 57%;
+    float: right;
+    height: calc(100vh - 155px);
+    padding: 20px 20px;
+    overflow: auto;
+
+    .table-dark {
+      color: white;
+      background-color: #0d0e2180;
+
+      thead > tr > th {
+        border-bottom: 2px solid #743916;
+      }
+
+      th, td {
+        border-top: 1px solid #322222 !important;
+      }
+    }
+  }
+
+  .style-scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+  }
+
+  .style-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .style-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #b7bbc8;
+  }
+}

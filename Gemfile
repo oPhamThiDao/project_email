@@ -19,6 +19,8 @@ gem "therubyracer", platforms: :ruby
 
 gem "jquery-rails"
 gem "jquery-ui-rails"
+gem "bootstrap-sass", "~> 3.4.1"
+gem "sassc-rails", ">= 2.1.0"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "rails-i18n"
 gem "config"
@@ -43,7 +45,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem "pg"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
