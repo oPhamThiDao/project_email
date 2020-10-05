@@ -1,11 +1,50 @@
-<%= form_tag recipients_path, method: :post, multipart: true do %>
-  <%= file_field_tag "file_csv" %>
-  <br>
-  <%= submit_tag "Submit" %>
-<% end %>
-
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
+<div class="import-csv">
+  <div class="form-import">
+    <%= form_tag recipients_path, method: :post, multipart: true do %>
+      <%= file_field_tag "file_csv", class: "file-salary" %>
+      <br>
+      <%= submit_tag "Submit", class: "btn btn-warning" %>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="show-messages">
+    <label>Thông báo sau khi submit:</label>
+    <ul class="messages-list">
+      <% flash.each do |type, msg| %>
+        <li class="message-<%= type %>">
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="salary-list style-scrollbar">
+  <label>Danh sách email đã gửi trong tháng <%= @target_month%>:</label>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Họ và tên</th>
+        <th scope="col">Bộ phận</th>
+        <th scope="col">Tổng</th>
+        <th scope="col">Trạng thái gửi</th>
+        <th scope="col">Thời gian gửi mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @receiver_infos.each do |receiver| %>
+        <tr>
+          <th scope="row"><%= receiver.id %></th>
+          <td><%= receiver.email %></td>
+          <td><%= receiver.name %></td>
+          <td><%= receiver.department_name %></td>
+          <td><%= receiver.salary %></td>
+          <td><%= receiver.status? ? "Đã gửi" : "Đang gửi" %></td>
+          <td><%= receiver.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

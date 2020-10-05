@@ -5,11 +5,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="main-bg"></div>
+    <div class="fixed-header">
+      <div class="container">
+        <nav>
+          <%= link_to "#{1.month.ago.strftime("T %m/%Y")}", root_path %>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container content">
+      <%= yield %>
+    </div>
+
+    <div class="fixed-footer">
+      <div class="container">Copyright &copy; 2020 Hoa Company</div>
+    </div>
   </body>
 </html>
