@@ -64,25 +64,21 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "project_email_#{Rails.env}"
 
   # config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :smtp
-
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
-
-  config.action_mailer.default_url_options = { host: ENV["DOMAIN"] }
-
   # host = 'localhost:3000' #replace with your own url
   # config.action_mailer.default_url_options = { host: host }
 
   # SMTP settings for gmail
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.sendgrid.com",
-    :port                 => 587,
-    :domain               => ENV["DOMAIN"],
-    :user_name            => ENV["GMAIL_USERNAME"],
-    :password             => ENV["GMAIL_PASSWORD"],
-    :authentication       => "plain",
+    :address        => "smtp.sendgrid.net",
+    :port           => 587,
+    :authentication => :plain,
+    :user_name      => ENV["GMAIL_USERNAME"],
+    :password       => ENV["GMAIL_PASSWORD"],
+    :domain         => ENV["DOMAIN"],
     :enable_starttls_auto => true
   }
 
