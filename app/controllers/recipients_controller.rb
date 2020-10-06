@@ -20,7 +20,7 @@ class RecipientsController < ApplicationController
         values = row.cells.map { |c| c.try(:value) }
         check_params!(values)
         info = ReceiverInfo.create_record(@target_month, values)
-        UserMailer.welcome_email(info.id, values).deliver_later
+        UserMailer.salary(info.id, values).deliver_now
       end
     ensure
       # delete temp file
