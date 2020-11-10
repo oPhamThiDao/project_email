@@ -45,7 +45,7 @@ class RecipientsController < ApplicationController
 
   def check_params!(values)
     errors = []
-    indexs = [0, 2, 7, 14]
+    indexs = [0, 2, 7, 15]
     titles = ["Email", "Họ và tên", "Lương", "Tổng"]
     indexs.each do |id|
       if values[id].blank?
