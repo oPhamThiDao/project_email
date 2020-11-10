@@ -22,11 +22,18 @@
       p {
         margin: 4px 0px;
       }
+
+      .dv-vnd {
+        float: right;
+      }
     </style>
   </head>
   <body>
-    <h2>Lương <%= 1.month.ago.strftime("T%m/%Y") %></h2>
-    
+    <h4>Hệ thống ÁO BÓNG ĐÁ. NÉT	</h4>
+    <h4>Địa chỉ: Số 8m9 ngõ 82 Nguyễn An Ninh, p. Tương Mai, Q. Hoàng Mai, Hà Nội</h4>
+    <h2>BẢNG THANH TOÁN LƯƠNG THÁNG <%= 1.month.ago.strftime("%m-%Y") %></h2>
+    <p class="dv-vnd">Đơn vị tính : 1000 đồng</p>
+
     <%= yield %>
 
     <div class="footer">
